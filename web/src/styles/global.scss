@@ -20,6 +20,45 @@ textarea {
   z-index: 2;
 }
 
+.leaflet-popup-content-wrapper {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+
+  box-shadow: none;
+}
+
+.leaflet-popup-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #0089a5;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 12px;
+
+  > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+    background: #15c3d6;
+    box-shadow: 17.2868px 27.6589px 41.4884px rgba(23, 142, 166, 0.16);
+    border-radius: 12px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #17d6eb;
+    }
+  }
+}
+
+.leaflet-popup-tip-container {
+  display: none;
+}
+
 html,
 body,
 #root {

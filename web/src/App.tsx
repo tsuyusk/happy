@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import Routes from './routes';
 
+import 'leaflet/dist/leaflet.css';
 import './styles/global.scss';
 
 const App: React.FC = () => {
