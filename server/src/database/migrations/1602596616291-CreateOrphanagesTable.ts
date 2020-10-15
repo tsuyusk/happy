@@ -18,18 +18,32 @@ export class CreateOrphanagesTable1602596616291 implements MigrationInterface {
             name: 'name',
             type: 'varchar',
           },
-          {
-            name: 'latitude',
-            type: 'decimal',
-            scale: 10,
-            precision: 2,
-          },
-          {
-            name: 'longitude',
-            type: 'decimal',
-            scale: 10,
-            precision: 2,
-          },
+
+          ...(process.env.NODE_ENV === 'production'
+            ? [
+                {
+                  name: 'latitude',
+                  type: 'decimal',
+                },
+                {
+                  name: 'longitude',
+                  type: 'decimal',
+                },
+              ]
+            : [
+                {
+                  name: 'latitude',
+                  type: 'decimal',
+                  scale: 10,
+                  precision: 2,
+                },
+                {
+                  name: 'longitude',
+                  type: 'decimal',
+                  scale: 10,
+                  precision: 2,
+                },
+              ]),
           {
             name: 'about',
             type: 'text',
@@ -40,7 +54,7 @@ export class CreateOrphanagesTable1602596616291 implements MigrationInterface {
           },
           {
             name: 'opening_hours',
-            type: 'string',
+            type: 'varchar',
           },
           {
             name: 'open_on_weekends',
