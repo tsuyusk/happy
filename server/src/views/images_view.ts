@@ -6,7 +6,7 @@ export default {
 
     return {
       ...renderedOrphanage,
-      url: `http://localhost:3333/uploads/${path}`,
+      url: `http://${process.env.API_URL || 'localhost'}:3333/uploads/${path}`,
     };
   },
 
